@@ -18,8 +18,16 @@ def alerta():
     zona = data.get("zona", "")
     mensagem = data.get("mensagem", "")
 
+    print("ALERTA RECEBIDO")
+    print("Zona:", zona)
+    print("Mensagem:", mensagem)
+
     return jsonify({
         "ok": True,
         "zona": zona,
         "mensagem": mensagem
     }), 200
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
